@@ -1,0 +1,12 @@
+{{#link-to 'products.edit' product}}
+  <div class="product image">
+    <img src={{product.image}} height=50 width=50>
+  </div>
+  <div class="product name">
+    {{product.name}}{{if product.hasDirtyAttributes ' (unsaved)'}} <span class="product price">(${{product.price}})</span>
+  </div>
+
+  <div class="product description">
+    {{product.description}}
+  </div>
+{{/link-to}}

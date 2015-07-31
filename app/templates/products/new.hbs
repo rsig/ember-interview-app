@@ -1,0 +1,28 @@
+<fieldset>
+  <h1>New Product</h1>
+  <hr>
+
+  <p>
+    <label>Name</label>
+    {{input value=model.name placeholder="Product Name"}}
+  </p>
+
+  <p>
+    <label>Description</label>
+    {{textarea value=model.description placeholder="Product Description"}}
+  </p>
+
+  <p>
+    <label>Price</label>
+    {{input value=model.price placeholder="Product Price"}}
+  </p>
+
+  <p>
+    <label>Image</label>
+    <img src={{model.image}} height=100 width=100 />
+    <br>
+    <a {{action 'randomImage'}} href="#">Generate Image</a>
+  </p>
+
+  <button type="submit" {{action 'create' model}}>Create Product</button>
+</fieldset>

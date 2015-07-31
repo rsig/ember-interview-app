@@ -1,0 +1,35 @@
+<div class="products selector">
+  {{#each products as |product|}}
+    <div class="product selection">
+      <a href="#" {{action "addToCart" product}}>
+        <div class="center">
+          <img src={{product.image}} alt={{product.name}} title={{product.name}} class='big' />
+        </div>
+        <div class="center">
+          {{product.name}}
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</div>
+
+<footer class="cart">
+  <div class="line-items">
+    &nbsp;
+    {{#each model.lineItems as |lineItem| }}
+      <span>
+        <a href="#" {{action "removeFromCart" lineItem}}>
+          <img src={{lineItem.product.image}} alt={{lineItem.product.name}} title={{lineItem.product.name}}  class="big has-tooltip" data-tooltip-content="Remove: {{lineItem.product.name}}"/>
+          {{lineItem.amount}}
+        </a>
+      </span>
+    {{/each}}
+  </div>
+  <div class="status">
+    You have {{model.totalItems}} items in your cart.
+    <br>
+    {{#link-to 'checkout' cart}}
+      Proceed to Checkout
+    {{/link-to}}
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+<h1>Products</h1>
+{{#each products as |product|}}
+  {{product-item product=product}}
+{{/each}}
+
+<li class="actions add-product">
+  <button type="add-product" name="add-product" {{action create}}>Add Product</button>
+</li>

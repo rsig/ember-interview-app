@@ -1,0 +1,8 @@
+<h1>Carts</h1>
+{{#each carts as |cart|}}
+  {{cart-item cart=cart}}
+{{/each}}
+
+<li class="actions add-cart">
+  <button type="add-cart" name="add-cart" {{action create}}>Add Cart</button>
+</li>
