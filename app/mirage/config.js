@@ -15,5 +15,5 @@ export default function() {
   this.get('/carts', ['carts', 'line_items']);
   this.post('/carts');
   this.get('/carts/:id', ['cart', 'line_items']);
-  this.put('/carts/:id', ['cart', 'line_items']);
+  this.put('/carts/:id');
 }
