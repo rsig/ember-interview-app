@@ -3,7 +3,7 @@ import DS from 'ember-data';
 let hasMany = DS.hasMany;
 
 export default DS.Model.extend({
-  lineItems: hasMany('lineItem', { async: false }),
+  lineItems: hasMany('lineItem', { async: true }),
   totalItems: 0,
 
   watchItemsInCart: function() {
